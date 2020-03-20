@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ol, ul{
+    list-style: none;
+}
+
+a:link, a:visited, a:hover, a:active{
+    text-decoration: none;
+    color: #333;
+}
+#back{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+/*======= Header ======*/
+.header-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+.header-container header{
+    width: 1300px;
+    height: 100px;
+    margin: 0 auto;
+}
+.header-container header a{
+    font-size: 50px;
+    line-height: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.header-container nav{
+    float: right;
+    line-height: 100px;
+}
+.header-container nav ul li{
+    float: left;
+}
+.header-container nav ul li:first-child{
+    margin-left: 0;
+}
+.header-container nav ul li a{
+    text-align: center;
+    color: #505050;
+    font-size: 40px;
+    display: block;
+    width: 150px;
+
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+.header-container nav ul li a:hover{
+    background-color: #F5AF64;
+    color: white;
+    text-shadow: 5px 5px 5px rgba(0,0,0.5);
+    -webkit-text-stroke: 1px #FFF0F0;
+}
+
+/* ======= Content ======== */
+
+.content-container section{
+    width: 1300px;
+    height: 650px;
+    margin: 0 auto;
+    background-color: #FFE6E6;
+    margin-top: 10%;
+    text-align: center;
+    line-height: 650px;
+}
+.content-container section img{
+    vertical-align: middle;
+}
+/* ======= Footer ======== */
+.footer-container{
+    text-align: center;
+    margin-top: 15%;
+    width: 100%;
+}
+.footer-container *{
+    color: black;
+}
+.footer-container footer{
+    height: 100px;
+}
+.footer-container footer p{
+    font-size: 16px;
+    line-height: 50px;
+}
+
+/*============= 반응형============ */
+@media (max-width: 1350px){
+    .content-container section{
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+        background-color: #FFE6E6;
+        margin-top: 10%;
+        text-align: center;
+        line-height: 400px;
+    }
+    .content-container section img{
+        vertical-align: middle;
+        width: 600px;
+        height: 300px;
+    }
+    .header-container header{
+        width: 800px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    .header-container header a{
+        font-size: 50px;
+        line-height: 100px;
+    }
+}
+@media (max-width: 830px){
+    .content-container section{
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        background-color: #FFE6E6;
+        margin-top: 10%;
+        text-align: center;
+        line-height: 300px;
+    }
+    .content-container section img{
+        vertical-align: middle;
+        width: 450px;
+        height: 150px;
+    }
+    .header-container header{
+        width: 600px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    .header-container header a{
+        font-size: 30px;
+        line-height: 100px;
+    }
+    .header-container nav ul li a{
+        text-align: center;
+        color: #505050;
+        font-size: 20px;
+        display: block;
+        width: 100px;
+    
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in;
+    }
+}
+@media (max-width: 600px){
+    .content-container section{
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        background-color: #FFE6E6;
+        margin-top: 10%;
+        text-align: center;
+        line-height: 300px;
+    }
+    .content-container section img{
+        vertical-align: middle;
+        width: 450px;
+        height: 150px;
+    }
+    .header-container header{
+        width: 400px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    .header-container header a{
+        font-size: 30px;
+        line-height: 100px;
+    }
+    .header-container nav ul li a{
+        text-align: center;
+        color: #505050;
+        font-size: 20px;
+        display: block;
+        width: 100px;
+    
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in;
+    }
+    
+}

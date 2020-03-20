@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>주차장관리시스템</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="stylesheets/checkprice.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+        <title>요금계산</title>
+    </head>
+    <body>
+        <img src="images/pay.gif" alt="주차">
+        <div class="back"></div>
+        <div class="header-container">
+            <header>
+                <a href="/">정산</a>
+            </header>
+        </div>
+        <div class="container">
+            <section>
+                <div class="info-container">
+                    <ul>
+                        <li><i class="far fa-bell"></i>&nbsp;500won per ten minutes</li>
+                        <li><i class="far fa-bell"></i>&nbsp;Handicap & University Official 50% Discount</li>
+                        <li><i class="far fa-bell"></i>&nbsp;SeasonTicket per a month 10,000won</li>
+                    </ul>
+                    <form action="/checkprice" method="POST">
+                        <input type="text" id="incar" name="car_number" placeholder="Car Number" required /><br />
+                        <input type="text" id="type" name="type" placeholder="Personal Type"><br />
+                        <button type="submit" id="open">check</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="modal-wrapper" style="display: none">
+            <div class="modal">
+                <p>잘못된 형식 또는 이미 입차되지 않은 차량입니다.<br/>이 창은 3초후에 닫힙니다.</p>
+                <div class="close-wrapper">
+                    <button id="close">닫기</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container">
+            <footer>
+                <p>Hun Parking lot<br />
+                    &copy;JeongSeongHun All Rights Reserved</p>
+            </footer>
+        </div>
+        <script>
+            const open = document.querySelector('#open');
+            const close = document.querySelector('#close');
+            const modal = document.querySelector('.modal-wrapper');
+
+            open.addEventListener('click',Modal);
+
+            close.onclick = () => {
+                modal.style.display = 'none';
+            }
+
+            function Modal(){
+                let inputValue = document.querySelector('input').value;
+                const rex = /^[0-9]{2,3}[가-힣]{1}[0-9]{4}$|^[가-힣]{2,3}[0-9]{2}[가-힣]{1}[0-9]{4}$/;
+                if(rex.test(inputValue) == true){
+                    inputValue.value = '';
+                    return 0;
+                }else if(rex.test(inputValue) == false){
+                    modal.style.display = 'flex';
+                }
+            }
+        </script>
+    </body>
+</html>
